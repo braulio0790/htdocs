@@ -9,7 +9,7 @@ const getData = async () => {
   const data = await apiFetch('http://localhost:8080/professional.json');
   displayAllData(data);
 };
-
+ 
 function displayAllData(data) {
   displayProfessionalName(data.professionalName);
   displayImage(data.base64Image);
