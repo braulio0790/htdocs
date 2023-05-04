@@ -2,9 +2,9 @@
 const express = require('express');
 const app = express();
 const lesson1Controller = require('./controllers/lesson1');
-const connectDB = require('./mongoDB/conectionDB');
+//const connectDB = require('./mongoDB/conectionDB');
 
-connectDB();
+//connectDB();
 const port = 3000;
 
 app.use('/', require('./routes'));
