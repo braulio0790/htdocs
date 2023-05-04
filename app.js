@@ -1,3 +1,9 @@
+const path = require('path');
+
+path.parse('professional.json').name; // professional
+
+
+
 //request express software
 //const express = require('express');
 //const app = express();
