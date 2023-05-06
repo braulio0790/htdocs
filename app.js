@@ -3,11 +3,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./mongoDB/conectionDB');
-//Routes are what is going to be shown depending of the request
-const professionalRoutes = require('./routes/professional');
+const path = require('path');
 
 const port = process.env.PORT || 8080;
 const app = express();
+//Allow access to all the files in the frontend
+app.use(express.static('frontend'));
 
 app
 .use(bodyParser.json())
@@ -15,7 +16,10 @@ app
  res.setHeader('Access-Control-Allow-Origin','*');
  next();
 })
-.use('/professional', professionalRoutes);
+//This code show the folder from the hosting that will be displayed in the browser
+app.get('/frontend', (req, res) => {
+    res.sendFile(__dirname + '/frontend/index.html')
+ });
 
 mongodb.initDb((err,mongodb) =>{
     if (err) {
