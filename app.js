@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./mongoDB/conectionDB');
+//Routes are what is going to be shown depending of the request
 const professionalRoutes = require('./routes/professional');
 
 const port = process.env.PORT || 8080;
