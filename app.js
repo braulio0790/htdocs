@@ -10,9 +10,11 @@ const port = process.env.PORT || 8080;
 //call express int the variable app
 const app = express();
 //Allow access to all the files in the frontend
+//This code show the folder from the hosting that will be displayed in the browser
 app.use(express.static('frontend'));
-//app.use(express.static('controllers'));
-
+app.get('/frontend', (req, res) => {
+    res.sendFile(__dirname + '/frontend/index.html')
+ });
 
 app
 .use(bodyParser.json())
@@ -20,13 +22,9 @@ app
  res.setHeader('Access-Control-Allow-Origin','*');
  next();
 })
-//This code show the folder from the hosting that will be displayed in the browser
-app.get('/frontend', (req, res) => {
-    res.sendFile(__dirname + '/frontend/index.html')
- });
-//Retunr a JSON object
-app.get('/professional', (req, res) =>{
-    res.json(data);
+//Retunr a JSON object in the end point /professional
+.get('/professional', function (req, res) {
+    res.json(JSON.stringify(data));
 });
 
 //Test the connection to MongoDB is working 
@@ -38,3 +36,11 @@ mongodb.initDb((err,mongodb) =>{
         console.log(`Connected to DB and listening on ${port}`);
     }
 });
+
+/* 
+const data = {
+    id: "8",
+    professionalName: "Braulio Garcia",
+    firstName: "Braulio",
+}
+*/
