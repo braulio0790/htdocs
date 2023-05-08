@@ -62,6 +62,5 @@ function displayGitHubLink(data) {
   githubLink.innerHTML = data.githubLink.text;
   githubLink.href = data.githubLink.link;
 }
-console.log('antes del get data');
+
 getData();
-console.log('despues del get data');
