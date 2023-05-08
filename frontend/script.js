@@ -8,7 +8,7 @@ async function apiFetch(url) {
 const getData = async () => {
   //In the app.js we need to send a JSON response that is found in localhost:8080/frontend
   const data = await apiFetch('http://localhost:8080/professional');
-  displayAllData(data);
+  displayAllData(data.response);
 };
  
 function displayAllData(data) {
@@ -62,5 +62,6 @@ function displayGitHubLink(data) {
   githubLink.innerHTML = data.githubLink.text;
   githubLink.href = data.githubLink.link;
 }
-
+console.log('antes del get data');
 getData();
+console.log('despues del get data');

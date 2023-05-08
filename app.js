@@ -1,5 +1,6 @@
 //Required packages
 const express = require('express');
+const router = express.Router();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./mongoDB/conectionDB');
@@ -16,18 +17,21 @@ app.get('/frontend', (req, res) => {
     res.sendFile(__dirname + '/frontend/index.html')
  });
 
-app
-.use(bodyParser.json())
-.use((req, res, next) => {
+app.use(bodyParser.json())
+app.use((req, res, next) => {
  res.setHeader('Access-Control-Allow-Origin','*');
  next();
 })
-//Retunr a JSON object in the end point /professional
-.get('/professional', function (req, res) {
-    res.json(JSON.stringify(data));
-});
+//When you access this path, then, execute data. 
+app.use("/professional", data);
 
-//Test the connection to MongoDB is working 
+/*Retunr a JSON object in the end point /professional
+app.use('/professional', function (req, res) {
+    res.json(data);
+});
+*/
+
+//Test the connection to MongoDB is working. esto enciende la conexion. 
 mongodb.initDb((err,mongodb) =>{
     if (err) {
         console.log(err);
