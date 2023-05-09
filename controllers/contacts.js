@@ -1,15 +1,23 @@
 //Call the necessary packages and files
-const express = require("express");
-const router = express.Router();
-const mongodb = require('../mongoDB/conectionDB');
-//The code below acess the getDb function from the connection file, then request the collection and convert it to array.
-//This function will be later requested and covert it to a JSON as response
-const getAllContacts = async (req,res) => {
-    const result = await mongodb.getDb().db().collection('contacts').find();
-    result.toArray().then((lists) => {
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(lists);
-      });
+const connectiondb = require('../mongoDB/conectionDB');
+const ObjectId = require('mongodb').ObjectId;
+
+//Get all contacts 
+const getAllData = async (req, res) => {
+  const result = await connectiondb.getDb().db().collection('contacts').find();
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists);
+  });
+};
+//Get one contact based on id
+const getSingle = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const result = await connectiondb.getDb().db().collection('contacts').find({ _id: userId });
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+  });
 };
 
-module.exports = {getAllContacts}
+module.exports = { getAllData, getSingle };
