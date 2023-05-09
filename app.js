@@ -18,12 +18,12 @@ app.use(cors());
 //Allow access to all the files in the frontend folder
 //This code shows the folder from the hosting that will be displayed in the browser
 app.use(express.static('frontend'));
-app.use(express.static('professional'));
-app.use(express.static('contacts'));
+app.use(express.static('controllers'));
+
+//Shows the front end files
 app.get('/frontend', (req, res) => {
     res.sendFile(__dirname + '/frontend/index.html')
  });
-
 //Shows the professional JSON from mongo in the route /professional
 app.use("/professional", data);
 //Shows the contacts JSON from mongo in the route /contacts. all contacts
