@@ -1,8 +1,10 @@
 
-const routes = require('express').Router();
-//const lesson1Controller = require('../controllers/lesson1');
-const lesson2Controller = require('../frontend/lesson2');
+//Call packages
+const router = require('express').Router();
+const mongodb = require('../mongoDB/conectionDB');
+//Call your files
+const professional = require('../controllers/professional');
 
-routes.get('/', lesson2Controller.indexhtml);
+router.get('/professional', professional.getData);
 
-module.exports = routes;
+module.exports = router;

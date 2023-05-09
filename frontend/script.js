@@ -8,7 +8,7 @@ async function apiFetch(url) {
 const getData = async () => {
   //In the app.js we need to send a JSON response that is found in localhost:8080/frontend
   const data = await apiFetch('http://localhost:8080/professional');
-  displayAllData(data.response);
+  displayAllData(data);
 };
  
 function displayAllData(data) {
