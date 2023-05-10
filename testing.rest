@@ -1,0 +1,23 @@
+###Local: HTML professional information
+GET http://localhost:8080/
+
+###Local: professional JSON
+GET http://localhost:8080/professional
+
+###Local: All contacts
+GET http://localhost:8080/contacts
+
+###Local: Single contact
+GET http://localhost:8080/contacts/64588003bcf037d29c7d920e
+
+###Live: HTML professional information
+GET https://cse341-ns.onrender.com
+
+###Live: professional JSON
+GET https://cse341-ns.onrender.com/professional
+
+###Live: All contacts
+GET https://cse341-ns.onrender.com/contacts
+
+###Live: Single contact
+GET https://cse341-ns.onrender.com/contacts/64588003bcf037d29c7d920e
