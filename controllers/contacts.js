@@ -61,7 +61,7 @@ const deleteData = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const response = await connectiondb.getDb().db().collection('contacts').deleteOne({ _id: userId });
   if (response.acknowledged) {
-    res.status(201).json(response);
+    res.status(200).json(response);
   } else {
     res.status(500).json(response.error || 'Some error occurred while creating the contact.');
   }

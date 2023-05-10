@@ -21,3 +21,62 @@ GET https://cse341-ns.onrender.com/contacts
 
 ###Live: Single contact
 GET https://cse341-ns.onrender.com/contacts/64588003bcf037d29c7d920e
+
+###Local: Insert contact
+POST http://localhost:8080/contacts/insert HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Joss",
+    "lastName":"Barragan",
+    "email":"joss@gmail.com",
+    "favoriteColor":"Black",
+    "birthday":"July 17th"
+
+}
+
+###Local: Update contact
+PUT http://localhost:8080/contacts/update/645bfcf2221ff3474aceb758 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Joss",
+    "lastName":"Barragan",
+    "email":"joss@gmail.com",
+    "favoriteColor":"Black",
+    "birthday":"July 19th"
+
+}
+
+###Local: Delete contact
+DELETE http://localhost:8080/contacts/delete/645bfcf2221ff3474aceb758 HTTP/1.1
+
+
+###Live: Insert contact
+POST http://localhost:8080/contacts/insert HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Joss",
+    "lastName":"Barragan",
+    "email":"joss@gmail.com",
+    "favoriteColor":"Black",
+    "birthday":"July 17th"
+
+}
+
+###Live: Update contact
+PUT http://localhost:8080/contacts/update/645bfcf2221ff3474aceb758 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Joss",
+    "lastName":"Barragan",
+    "email":"joss@gmail.com",
+    "favoriteColor":"Black",
+    "birthday":"July 19th"
+
+}
+
+###Live: Delete contact
+DELETE http://localhost:8080/contacts/delete/645bfcf2221ff3474aceb758 HTTP/1.1
