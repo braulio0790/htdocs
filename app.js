@@ -1,6 +1,7 @@
 //Required packages
 const expressLib = require('express');
 const router = expressLib.Router();
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const conectiondb = require('./mongoDB/conectionDB');
@@ -10,16 +11,12 @@ const conectiondb = require('./mongoDB/conectionDB');
 const port = process.env.PORT || 8080;
 //call express int the variable app
 const app = expressLib();
-app.use(expressLib.static('frontend'));
-app.use(expressLib.static('controllers'));
-
-//Show the html
-app.get('/frontend', (req, res) => {
-    res.sendFile(__dirname + '/frontend/index.html')
-});
+//Call corse package
+app.use(cors());
 
 //Prepare responses based on URL requested
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(expressLib.urlencoded({ extended: true }));
 app.use((req, res, next) => {
    res.setHeader('Access-Control-Allow-Origin', '*');
    next();

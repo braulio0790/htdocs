@@ -23,6 +23,8 @@
     "mongodb": "^5.4.0",
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22",
-    "server": "^1.0.38"
+    "server": "^1.0.38",
+    "swagger-autogen": "^2.23.1",
+    "swagger-ui-express": "^4.6.3"
   }
 }
