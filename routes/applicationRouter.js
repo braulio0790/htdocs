@@ -14,16 +14,15 @@ router.put('/contacts/update/:id', contacts.updateData);
 router.delete('/contacts/delete/:id', contacts.deleteData);
 router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(swaggerDocument));
-/*
 router.use(
     '/',
     (docData = (req, res) => {
       let docData = {
         documentationURL: 'https://nathanbirch.github.io/nathan-byui-api-docs',
       };
-      res.send(docData);
+      res.send("This is The Home Page");
     })
   );
- */ 
+ 
 
 module.exports = router;
