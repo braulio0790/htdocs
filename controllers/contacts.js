@@ -49,8 +49,9 @@ const updateData = async (req, res) => {
     birthday:req.body.birthday
   };
   const response = await connectiondb.getDb().db().collection('contacts').replaceOne({ _id: userId }, contactInfo);
+  console.log(response);
   if (response.modifiedCount > 0) {
-    res.status(204).send();
+    res.status(200).json(response);
   } else {
     res.status(500).json(response.error || 'Some error occurred while updating the contact.');
   }

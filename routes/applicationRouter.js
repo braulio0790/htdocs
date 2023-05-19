@@ -14,6 +14,7 @@ router.put('/contacts/update/:id', contacts.updateData);
 router.delete('/contacts/delete/:id', contacts.deleteData);
 router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(swaggerDocument));
+/*
 router.use(
     '/',
     (docData = (req, res) => {
@@ -23,5 +24,6 @@ router.use(
       res.send(docData);
     })
   );
+ */ 
 
 module.exports = router;

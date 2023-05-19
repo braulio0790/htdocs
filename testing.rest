@@ -36,7 +36,7 @@ content-type: application/json
 }
 
 ###Local: Update contact
-PUT http://localhost:8080/contacts/update/645c04b816a83f1df4c7431b HTTP/1.1
+PUT http://localhost:8080/contacts/update/6467058df817f5a0b2ff8033 HTTP/1.1
 content-type: application/json
 
 {
@@ -44,12 +44,23 @@ content-type: application/json
     "lastName":"Barragan",
     "email":"joss@gmail.com",
     "favoriteColor":"Black",
-    "birthday":"July 19th"
+    "birthday":"July 22th"
 
 }
 
 ###Local: Delete contact
 DELETE http://localhost:8080/contacts/delete/645c04b816a83f1df4c7431b HTTP/1.1
+
+
+
+
+###Live: See All Contacts
+GET https://cse341-ns.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+###Live: See One Contact
+GET https://cse341-ns.onrender.com/contacts/64588003bcf037d29c7d920e HTTP/1.1
+content-type: application/json
 
 
 ###Live: Insert contact
@@ -66,7 +77,7 @@ content-type: application/json
 }
 
 ###Live: Update contact
-PUT https://cse341-ns.onrender.com/contacts/update/645c09420587290a94c9b257 HTTP/1.1
+PUT https://cse341-ns.onrender.com/contacts/update/6467058df817f5a0b2ff8033 HTTP/1.1
 content-type: application/json
 
 {
@@ -79,4 +90,4 @@ content-type: application/json
 }
 
 ###Live: Delete contact
-DELETE https://cse341-ns.onrender.com/contacts/delete/645c09420587290a94c9b257 HTTP/1.1
+DELETE https://cse341-ns.onrender.com/contacts/delete/64670614f817f5a0b2ff8034 HTTP/1.1
