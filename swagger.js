@@ -6,8 +6,8 @@ const doc = {
     title: 'Contacts API',
     description: 'Personal activity week 4',
   },
-  host: 'localhost:8080',
-  schemes: ['http'],
+  host: 'https://cse341-ns.onrender.com/',
+  schemes: ['https'],
 };
 //This file contains what is going to be shown in certain parts of the UI swagger testing page
 const outputFile = './swagger.json';
